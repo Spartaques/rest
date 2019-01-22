@@ -1,25 +1,21 @@
 {
-    "name": "polyloans/rest",
+    "name": "spartaques/rest",
     "description": "Http Client",
+    "minimum-stability": "stable",
     "type": "library",
-    "version": "1.4",
+    "version": "1.5",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "~6.3"
     },
     "authors": [
         {
-            "name": "Wrapper Overwrapper",
+            "name": "Stable version",
             "email": "rd+3301@newage.io"
         }
     ],
     "autoload": {
         "psr-4": {
             "Polyloans\\Rest\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Polyloans\\Rest\\Tests\\": "tests/"
         }
     }
 }

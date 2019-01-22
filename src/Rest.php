@@ -93,12 +93,18 @@ class Rest
     public function execute($method = null, $uri = null, $options = null)
     {
         try {
-            return $this->response = $this->client->request(
+            $requestStart = microtime(true);
+            $this->response = $this->client->request(
                 $method ? $method : $this->method,
                 $uri ? $uri : $this->uri,
                 array_merge(['headers' => $this->headers, 'body' => $this->body], (array) $options)
             );
+            $requestDuration = microtime(true) - $requestStart;
+            \Log::info('EXTERNAL REQUEST TIME '. $requestDuration .' STATUS TRUE URI ' . ($uri ? $uri : $this->uri));
+            return $this->response;
         } catch (RequestException $e) {
+            $requestDuration = microtime(true) - $requestStart;
+            \Log::info('EXTERNAL REQUEST TIME '. $requestDuration .' STATUS FALSE URI ' . ($uri ? $uri : $this->uri));
             if ($e->getResponse()) {
                 throw new RestException('HTTP ERROR', $e->getCode(), $e->getResponse()->getBody(true));
             } else {
