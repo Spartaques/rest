@@ -1,6 +1,7 @@
 {
-    "name": "polyloans/rest",
+    "name": "spartaques/rest",
     "description": "Http Client",
+    "minimum-stability": "stable",
     "type": "library",
     "version": "1.4",
     "require": {
@@ -8,7 +9,7 @@
     },
     "authors": [
         {
-            "name": "Wrapper Overwrapper",
+            "name": "Stable version",
             "email": "rd+3301@newage.io"
         }
     ],
@@ -17,9 +18,4 @@
             "Polyloans\\Rest\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Polyloans\\Rest\\Tests\\": "tests/"
-        }
-    }
 }
